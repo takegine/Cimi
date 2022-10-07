@@ -3,13 +3,7 @@
   "license": "MIT",
   "version": "0.0.0",
   "description": "A tool for fully automatic publishing of npm packages",
-  "authors": [
-    {
-      "name": "fengxin",
-      "email": "1244200081@qq.com"
-    },
-    "西索酱"
-  ],
+  "authors": "西索酱",
   "files": [
     ".github",
     "README.md",
@@ -17,13 +11,13 @@
   ],
   "scripts": {
     "build": "tsup",
-    "prepatch":"pnpm build",
-    "patch": "qpub patch main",
-    "minor": "qpub minor main",
-    "major": "qpub major main",
-    "patchBeta": "qpub patchBeta main",
-    "minorBeta": "qpub minorBeta main",
-    "majorBeta": "qpub majorBeta main"
+    "prepatch": "pnpm build",
+    "patch": "qpub -patch",
+    "minor": "qpub -minor",
+    "major": "qpub -major",
+    "patchBeta": "qpub -patch -B -branch main",
+    "minorBeta": "qpub -minor -B -branch main",
+    "majorBeta": "qpub -major -B -branch main"
   },
   "bugs": {
     "url": "https://github.com/takegine/Cimi/issues"
@@ -51,7 +45,6 @@
     "minify": true,
     "splitting": false,
     "clean": true,
-    "dts": true,
     "skipNodeModulesBundle": true
   }
 }
