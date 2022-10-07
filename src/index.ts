@@ -16,7 +16,7 @@ export default async function(options:any) {
   console.info(green(`\nVersion: ${cyan(`${projectVersion} -> ${newVersion}`)}`))
   console.info(green(`${type} ${projectName} version to ${newVersion}`))
   await execShell()
-  console.info(`\n${green('[ Cimi ]')} Release ${projectName} Success!\n`)
+  console.info(`\n${green('[ qpub ]')} Release ${projectName} Success!\n`)
 
   //获取新的版本号
   function getNewVersion(oldVersion:string) {

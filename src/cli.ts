@@ -3,7 +3,7 @@
 import { program } from 'commander'
 import { version } from '../package.json'
 import chalk from 'chalk'
-import cimi from '.'
+import qpub from '.'
 
 const { green, red } = chalk
 
@@ -21,17 +21,17 @@ program
       '    You should run this script in the root directory of you project or run by npm scripts.'
     )
     console.log('\n  Examples:\n')
-    console.log(`    ${green('$')} cimi patch [branch] (default: master)`)
-    console.log(`    ${green('$')} cimi minor [branch] (default: master)`)
-    console.log(`    ${green('$')} cimi major [branch] (default: master)`)
-    console.log(`    ${green('$')} cimi patchBeta [branch] (default: master)`)
-    console.log(`    ${green('$')} cimi minorBeta [branch] (default: master)`)
-    console.log(`    ${green('$')} cimi majorBeta [branch] (default: master)`)
+    console.log(`    ${green('$')} qpub patch [branch] (default: master)`)
+    console.log(`    ${green('$')} qpub minor [branch] (default: master)`)
+    console.log(`    ${green('$')} qpub major [branch] (default: master)`)
+    console.log(`    ${green('$')} qpub patchBeta [branch] (default: master)`)
+    console.log(`    ${green('$')} qpub minorBeta [branch] (default: master)`)
+    console.log(`    ${green('$')} qpub majorBeta [branch] (default: master)`)
     console.log('')
   })
   .parse(process.argv)
 
-cimi(program).catch((err) => {
+qpub(program).catch((err) => {
   console.error(`${red(err)}`)
   process.exit(1)
 })

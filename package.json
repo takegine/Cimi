@@ -1,12 +1,15 @@
 {
-  "name": "cimi",
+  "name": "qpub",
   "license": "MIT",
-  "version": "1.1.28",
+  "version": "0.0.0",
   "description": "A tool for fully automatic publishing of npm packages",
-  "authors": {
-    "name": "fengxin",
-    "email": "1244200081@qq.com"
-  },
+  "authors": [
+    {
+      "name": "fengxin",
+      "email": "1244200081@qq.com"
+    },
+    "西索酱"
+  ],
   "files": [
     ".github",
     "README.md",
@@ -14,17 +17,18 @@
   ],
   "scripts": {
     "build": "tsup",
-    "patch": "cimi patch main",
-    "minor": "cimi minor main",
-    "major": "cimi major main",
-    "patchBeta": "cimi patchBeta main",
-    "minorBeta": "cimi minorBeta main",
-    "majorBeta": "cimi majorBeta main"
+    "prepatch":"pnpm build",
+    "patch": "qpub patch main",
+    "minor": "qpub minor main",
+    "major": "qpub major main",
+    "patchBeta": "qpub patchBeta main",
+    "minorBeta": "qpub minorBeta main",
+    "majorBeta": "qpub majorBeta main"
   },
   "bugs": {
-    "url": "https://github.com/fengxinhhh/Cimi/issues"
+    "url": "https://github.com/takegine/Cimi/issues"
   },
-  "homepage": "https://github.com/fengxinhhh/Cimi#readme",
+  "homepage": "https://github.com/takegine/Cimi#readme",
   "main": "dist/index",
   "bin": "dist/cli.js",
   "dependencies": {
