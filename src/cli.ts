@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import { program } from 'commander'
-import { version } from '../../package.json'
+import { version } from '../package.json'
 import chalk from 'chalk'
-import cimi from '../index'
+import cimi from '.'
 
 const { green, red } = chalk
 
