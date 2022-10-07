@@ -2,8 +2,7 @@
 [![npm](https://img.shields.io/npm/l/qpub.svg)](https://www.npmjs.com/package/qpub)
 
 # qpub
-
-一款全自动npm发包工具，一行命令帮助你git replase、创建git tag、发布npm包。
+`quick-publish`一款全自动npm发包工具，一行命令帮助你git replase、创建git tag、发布npm包。
 
 qpub自动生成新版本号，自动生成commit message，创建tag，push到github，最后发布到npm中，整个过程只需要一行命令，解放你的双手！
 
@@ -31,19 +30,19 @@ qpub自动生成新版本号，自动生成commit message，创建tag，push到g
 
 ## qpub修改版本规则
 
-`qpub`共有六种规则，来进行发包，其实也就是确定版本号。
+`qpub`共有三种规则，来进行发包，其实也就是确定版本号。
 
-* `qpub patch` 更新一个小版本，如1.1.0 -> 1.1.1，如bug修复;
-* `qpub minor` 更新一个中版本，如1.1.0 -> 1.2.0，如新增功能;
-* `qpub major` 更新一个大版本，如1.1.0 -> 2.1.0，如重构架构;
-* `qpub patchBeta` 更新一个小的测试版本，如1.1.0 -> 1.1.1-beta，如bug修复;
-* `qpub minor` 更新一个中的测试版本，如1.1.0 -> 1.2.0-beta，如新增功能;
-* `qpub major` 更新一个大的测试版本版本，如1.1.0 -> 2.1.0-beta，如重构架构;
+* `qpub -patch` 更新一个小版本，如1.1.1 -> 1.1.2，如bug修复;
+* `qpub -minor` 更新一个中版本，如1.1.1 -> 1.2.0，如新增功能;
+* `qpub -major` 更新一个大版本，如1.1.1 -> 2.0.0，如重构架构;
+### 参数 -B --beta
+* `qpub -patch -B` 更新一个小的测试版本，如1.1.1 -> 1.1.2-beta，如bug修复;
+* `qpub -minor --beta` 更新一个中的测试版本，如1.1.1 -> 1.2.0-beta，如新增功能;
 
+### 参数 -branch
 而分支默认为`master`，如果主分支为其他分支，应这样使用:
-
-`qpub patch main`
-`qpub patch beta`
+`qpub -patch -branch main`
+`qpub -patch -branch beta`
 
 ## 使用
 
@@ -54,36 +53,31 @@ npm i qpub -g
 npm i qpub -D
 ```
 
+推荐使用pnpm安装。
+```bash
+# 全局安装qpub
+pnpm i qpub -g
+# 本地安装qpub
+pnpm i qpub -D
+```
+
 以下是`qpub -h`的输出：
 
 ```
 Usage: qpub [options]
 
 Options:
-  -v, --version  output the version number
-  patch          patch your new npm package
-  minor          minor your new npm package
-  major          major your new npm package
-  patchBeta      patch your new beta npm package
-  minorBeta      minor your new beta npm package
-  majorBeta      major your new beta npm package
-  -h, --help     display help for command
-
-  Tip:
-
-    You should run this script in the root directory of you project or run by npm scripts.
-
-  Examples:
-
-    $ qpub patch [branch] (default: master)
-    $ qpub minor [branch] (default: master)
-    $ qpub major [branch] (default: master)
-    $ qpub patchBeta [branch] (default: master)
-    $ qpub minorBeta [branch] (default: master)
-    $ qpub majorBeta [branch] (default: master)
+  -v, --version     output the version number
+  -B --beta         publish your new npm package with beta (default: false)
+  -patch            patch your new npm package with beta (default: true)
+  -minor            minor your new npm package with beta (default: false)
+  -major            major your new npm package with beta (default: false)
+  -branch [master]  pull this branch (default: "master")
+  -h, --help        display help for command
 
 ```
 
 ## LICENSE
 
 [MIT](./LICENSE) © fengxin
+[MIT](./LICENSE) © 西索酱
